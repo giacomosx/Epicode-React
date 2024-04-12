@@ -1,9 +1,8 @@
 import React from "react";
-import fantasy from "../../books/fantasy.json";
 import {Row, Col} from "react-bootstrap";
 import CustomCard from "../customcard/CustomCard";
 
-const Allbooks = ({ sectionTitle }) => {
+const Allbooks = ({ sectionTitle, data }) => {
   return (
     <section>
       <Row className="py-3">
@@ -11,14 +10,15 @@ const Allbooks = ({ sectionTitle }) => {
           <h3>{sectionTitle}</h3>
         </Col>
       </Row>
-      <Row xs={1} md={3} lg={6} className="g-4">
-        {fantasy.map((book, idx) => (
-          <CustomCard
-            key={`book-${idx}`}
+      <Row xs={1} md={3} lg={5} className="g-3">
+        {data.map((book, idx) => (
+          <Col key={`book-${idx}`}>
+            <CustomCard
             title={book.title}
             img={book.img}
             price={book.price}
           />
+          </Col>
         ))}
       </Row>
     </section>
