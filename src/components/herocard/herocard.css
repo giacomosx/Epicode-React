@@ -1,0 +1,26 @@
+.cardImg {
+    height: 420px;
+}
+
+.card {
+    transition: all 500ms ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px #ccc;
+}
+
+
+/* dispositivi tablet  */
+@media only screen and (min-width: 768px) {
+    .cardImg {
+        height: 220px;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    .cardImg {
+        height: 420px;
+    }
+}
