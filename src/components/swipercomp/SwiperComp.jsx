@@ -16,7 +16,6 @@ const SwiperComp = ({ category }) => {
         }}
         navigation
         modules={[Pagination, Navigation]}
-        slidesPerView={3}
         spaceBetween={20}
         className="mySwiper"
         breakpoints={{
@@ -26,7 +25,7 @@ const SwiperComp = ({ category }) => {
           768: {
             slidesPerView: 2,
           },
-          1024: { 
+          1440: { 
             slidesPerView: 3
           },
         }}

@@ -4,10 +4,10 @@ import Navlist from "../navlist/Navlist";
 
 const TopNavbar = () => {
   return (
-    <Navbar expand="lg" className=" bg-body-tertiary  py-2">
-      <Container className="py-1">
+    <Navbar expand="lg" className=" bg-body-tertiary  py-2" id="navbar" >
+      <Container className="py-1 d-flex justify-content-between w-100">
         <Logo logoAlt={'Logo Brand'} logoSrc={'./logo-296.svg'} brandName={'Epibooks'}/>
-        <Navlist />
+        <Navlist className=" w-auto "/>
       </Container>
     </Navbar>
   );

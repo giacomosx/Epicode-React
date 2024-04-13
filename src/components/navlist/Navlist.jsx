@@ -1,16 +1,19 @@
 import React from 'react'
 import {Navbar, Nav} from 'react-bootstrap'
+import './navlist.css'
 
 const Navlist = () => {
   return (
     <>
         <Navbar.Toggle aria-controls="mainNav" />
-        <Navbar.Collapse id="mainNav">
-            <Nav className="me-auto">
-            <Nav.Link className="text-bg-light active " href="#home">Home</Nav.Link>
-            <Nav.Link className="text-disabled disabled " href="#fav">Fav</Nav.Link>
-            <Nav.Link className="text-disabled disabled " href="#topFive">Top </Nav.Link>
-            <Nav.Link className="text-disabled disabled " href="#offers">Offers</Nav.Link>
+        <Navbar.Collapse id="mainNav" className=' flex-grow-0 '>
+            <Nav className="me-auto ">
+            <Nav.Link className="text-bg-light " href="#home">Home</Nav.Link>
+            <Nav.Link className="text-bg-light " href="#fantasy">Fantasy</Nav.Link>
+            <Nav.Link className="text-bg-light " href="#history">History </Nav.Link>
+            <Nav.Link className="text-bg-light " href="#horror">Horror</Nav.Link>
+            <Nav.Link className="text-bg-light " href="#romance">Romance</Nav.Link>
+            <Nav.Link className="text-bg-light " href="#sci-fi">Sci-fi</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </>

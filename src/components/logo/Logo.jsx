@@ -7,11 +7,11 @@ const Logo = ({ logoSrc, logoAlt, brandName }) => {
         <img
           alt={logoAlt}
           src={logoSrc}
-          width="30"
-          height="30"
+          width="40"
+          height="40"
           className=""
         />{" "}
-        <span className="text-bg-light">{brandName}</span>
+        <span className="text-bg-light fs-2">{brandName}</span>
       </Navbar.Brand>
   );
 };

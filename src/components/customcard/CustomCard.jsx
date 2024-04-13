@@ -4,7 +4,7 @@ import style from './customCard.module.css'
 
 const CustomCard = ({img, title, price}) => {
   return (
-        <Card className='h-100 border-0 '>
+        <Card className='h-100 border-0 p-2'>
             <div className={`${style.container_cardImg} `}>
                 <Card.Img src={img} alt={title} className='w-100 h-100 object-fit-cover img-fluid '/>
             </div>

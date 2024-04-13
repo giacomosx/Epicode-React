@@ -5,13 +5,13 @@ import CustomCard from "../customcard/CustomCard";
 const Allbooks = ({ sectionTitle, data }) => {
   return (
     <section>
-      <Row className="py-3">
+      <Row className="py-4 my-3 border-top ">
         <Col>
-          <h3>{sectionTitle}</h3>
+          <h3 id={`${sectionTitle.toLowerCase().split().join('-')}`} className="h2">{sectionTitle}</h3>
         </Col>
       </Row>
       <Row xs={1} md={3} lg={5} className="g-3">
-        {data.map((book, idx) => (
+        {data.slice(0,10).map((book, idx) => (
           <Col key={`book-${idx}`}>
             <CustomCard
             title={book.title}
@@ -19,7 +19,7 @@ const Allbooks = ({ sectionTitle, data }) => {
             price={book.price}
           />
           </Col>
-        ))}
+))}
       </Row>
     </section>
   );
