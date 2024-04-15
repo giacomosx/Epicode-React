@@ -1,23 +1,44 @@
-import React from 'react'
-import {Navbar, Nav} from 'react-bootstrap'
-import './navlist.css'
+import React, {useState } from "react";
+import ToggleBtn from "../togglebtn/ToggleBtn";
+import "./navlist.css";
+
+const navLinks = [
+  { title: "Fantasy", selector: "#fantasy" },
+  { title: "History", selector: "#history" },
+  { title: "Horror", selector: "#horror" },
+  { title: "Romance", selector: "#romance" },
+  { title: "Sci-fi", selector: "#sci-fi" },
+];
 
 const Navlist = () => {
+  const [visible, setVisible] = useState(false);
+
+  const showMenu = () => {
+    setVisible(!visible);
+  }
+
   return (
     <>
-        <Navbar.Toggle aria-controls="mainNav" />
-        <Navbar.Collapse id="mainNav" className=' flex-grow-0 '>
-            <Nav className="me-auto ">
-            <Nav.Link className="text-bg-light hover--text-underline " href="#home">Home</Nav.Link>
-            <Nav.Link className="text-bg-light hover--text-underline" href="#fantasy">Fantasy</Nav.Link>
-            <Nav.Link className="text-bg-light hover--text-underline" href="#history">History </Nav.Link>
-            <Nav.Link className="text-bg-light hover--text-underline" href="#horror">Horror</Nav.Link>
-            <Nav.Link className="text-bg-light hover--text-underline" href="#romance">Romance</Nav.Link>
-            <Nav.Link className="text-bg-light hover--text-underline" href="#sci-fi">Sci-fi</Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
-    </>
-  )
-}
+      <ToggleBtn onClick={showMenu} />
 
-export default Navlist
+      <div
+        className={`navbar-collapse flex-grow-0 ${
+          visible ? 'show' : ''
+        } `}
+        >
+        <ul className=" navbar-nav ">
+          {navLinks.map((item, index) => (
+            <li className="nav-item text-bg-light main-nav-links" key={index}>
+              <a href={item.selector} className="text-black nav-link">
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </>
+  );
+};
+
+export default Navlist;

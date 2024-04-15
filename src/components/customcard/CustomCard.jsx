@@ -11,7 +11,7 @@ const CustomCard = ({img, title, price}) => {
             <Card.Body className=' d-flex flex-column justify-content-between' >
                 <Card.Title className='h6 text-truncate '>{title}</Card.Title>
                 <div>
-                    <Button>$ {price}</Button>
+                    <Button variant='outline-primary'>$ {price}</Button>
                 </div>
             </Card.Body>
         </Card>
