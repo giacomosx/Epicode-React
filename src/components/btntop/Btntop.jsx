@@ -3,7 +3,7 @@ import './btntop.css'
 
 const Btntop = ({selector}) => {
   return (
-    <a href={selector} title="Go up" className="btn--top"><img src="./arrow-up.svg" alt="Top" width={25} height={25}/></a>
+    <a href={selector} title="Go up" className="btn--top"><img src="./icons/arrow-up.svg" alt="Top" width={25} height={25}/></a>
   )
 }
 
