@@ -1,10 +1,10 @@
 import React from "react";
 import {Row, Col} from "react-bootstrap";
-import CustomCard from "../customcard/CustomCard";
+import SingleCard from "../singlecard/SingleCard";
 import Btntop from "../btntop/Btntop";
 
-const Allbooks = ({ sectionTitle, data }) => {
-  return (
+const AllTheBooks = ({ sectionTitle, data, maxResults }) => { 
+  if (data.length > 0) return (
     <section>
       <Row className="py-4 my-3 border-top ">
         <Col className="d-flex justify-content-between align-items-center ">
@@ -13,9 +13,9 @@ const Allbooks = ({ sectionTitle, data }) => {
         </Col>
       </Row>
       <Row xs={2} md={4} lg={5} className="g-3">
-        {data.slice(0,10).map((book, idx) => (
+        {data.slice(0,maxResults).map((book, idx) => (
           <Col key={`book-${idx}`}>
-            <CustomCard
+            <SingleCard
             title={book.title}
             img={book.img}
             price={book.price}
@@ -27,4 +27,4 @@ const Allbooks = ({ sectionTitle, data }) => {
   );
 };
 
-export default Allbooks;
+export default AllTheBooks;

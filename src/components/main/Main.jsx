@@ -1,24 +1,30 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Allbooks from '../allbooks/Allbooks'
-import Hero from '../hero/Hero';
-import fantasy from "../../books/fantasy.json";
-import history from '../../books/history.json'
-import horror from '../../books/horror.json'
-import romance from '../../books/romance.json'
-import scifi from '../../books/scifi.json'
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Hero from "../hero/Hero";
+import AllTheBooks from "../allthebooks/AllTheBooks";
+
+import fantasy from "../../data/books/fantasy.json";
+import history from "../../data/books/history.json";
+import horror from "../../data/books/horror.json";
+import romance from "../../data/books/romance.json";
+import scifi from "../../data/books/scifi.json";
 
 const Main = () => {
-  return (
-    <Container fluid='lg' className='py-4 mb-4'>
-        <Hero />
-        <Allbooks sectionTitle={'Fantasy'} data={fantasy}/>
-        <Allbooks sectionTitle={'History'} data={history}/>
-        <Allbooks sectionTitle={'Horror'} data={horror}/>
-        <Allbooks sectionTitle={'Romance'} data={romance}/>
-        <Allbooks sectionTitle={'Sci-fi'} data={scifi}/>
-    </Container>
-  )
-}
 
-export default Main
+  const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
+  let [results, setResults] = useState([])
+
+  return (
+    <Container fluid="lg" className="mb-4">
+      <Hero setresults={setResults} allbooks={allBooks}/>
+      <AllTheBooks maxResults={30} sectionTitle={"Results"} data={results} />
+      <AllTheBooks maxResults={10} sectionTitle={"Fantasy"} data={fantasy} />
+      <AllTheBooks maxResults={10} sectionTitle={"History"} data={history} />
+      <AllTheBooks maxResults={10} sectionTitle={"Horror"} data={horror} />
+      <AllTheBooks maxResults={10} sectionTitle={"Romance"} data={romance} />
+      <AllTheBooks maxResults={10} sectionTitle={"Sci-fi"} data={scifi} />
+    </Container>
+  );
+};
+
+export default Main;

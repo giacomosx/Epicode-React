@@ -19,11 +19,12 @@ const SwiperComp = ({ category }) => {
         spaceBetween={20}
         className="mySwiper"
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
           768: {
             slidesPerView: 2,
+            spaceBetween: 10
+          },
+          1024: { 
+            slidesPerView: 2
           },
           1440: { 
             slidesPerView: 3

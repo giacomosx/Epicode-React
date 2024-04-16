@@ -1,18 +1,10 @@
-.cardImg {
-    height: 420px;
-}
-
-
-
-/* dispositivi tablet  */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cardImg {
-        height: 220px;
+        height: 320px;
     }
 }
 
-/* Desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px)  {
     .cardImg {
         height: 420px;
     }
