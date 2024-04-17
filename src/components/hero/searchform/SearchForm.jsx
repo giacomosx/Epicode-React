@@ -16,7 +16,7 @@ const SearchForm = (props) => {
   
   return (
     <div className='d-flex gap-3 w-75 flex-column flex-md-row mb-4'>
-        <Form.Control type='text' placeholder='Type a title and...' className=' flex-grow-0' onChange={handleChange} />
+        <Form.Control type='text' placeholder='Type a title and...' className=' flex-grow-0' onChange={handleChange}/>
         <Button onClick={searchBook}>Explore</Button>
     </div>
   )

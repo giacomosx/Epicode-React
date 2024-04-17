@@ -1,21 +1,25 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import HeroCard from "../herocard/HeroCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import './swipercomp.css'
-import HeroCard from "../herocard/HeroCard";
 
-const SwiperComp = ({ category }) => {
+const SwiperComp = ({ data }) => {
   return (
     <div className="container">
       <Swiper
         pagination={{
           dynamicBullets: true,
         }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={20}
         className="mySwiper"
         breakpoints={{
@@ -31,7 +35,7 @@ const SwiperComp = ({ category }) => {
           },
         }}
       >
-        {category.map((book) => (
+        {data.map((book) => (
           <SwiperSlide className="p-1 h-100 " key={`swiperBook-${book.asin}`}>
             <HeroCard title={book.title} img={book.img} price={book.price} />
           </SwiperSlide>

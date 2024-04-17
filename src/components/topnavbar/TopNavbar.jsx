@@ -1,5 +1,5 @@
-import Logo from "../logo/Logo";
-import Navlist from "../navlist/Navlist";
+import Logo from "./logo/Logo";
+import Navlist from "./navlist/Navlist";
 
 const TopNavbar = () => {
   return (
