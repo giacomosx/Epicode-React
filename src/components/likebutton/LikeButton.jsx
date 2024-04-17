@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import "./likebutton.css";
 
-const LikeButton = ({selectcard}) => {
+const LikeButton = ({selectcard, status}) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
     setClicked(!clicked);
-    selectcard(true)
+    selectcard(!status)
   }
 
   const icon = (

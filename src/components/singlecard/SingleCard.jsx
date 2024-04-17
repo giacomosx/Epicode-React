@@ -19,7 +19,7 @@ const SingleCard = ({ img, title, price }) => {
       </Card.Body>
       <div className="d-flex justify-content-between ">
         <Button variant="outline-primary">$ {price}</Button>
-        <LikeButton selectcard={setSelected}/>
+        <LikeButton status={selected} selectcard={setSelected}/>
       </div>
     </Card>
   );
