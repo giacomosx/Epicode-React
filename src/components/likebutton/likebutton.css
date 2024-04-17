@@ -1,0 +1,14 @@
+button.hover-up svg {
+    fill: #dc3545;
+    width: 24px;
+    height: 24px;
+}
+
+.hover-up {
+    transition: all 250ms linear;
+}
+
+.hover-up:hover {
+    transform: translateY(-0.5rem);
+}
+
