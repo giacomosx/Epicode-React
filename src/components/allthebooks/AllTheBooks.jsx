@@ -1,7 +1,7 @@
 import React from "react";
 import {Row, Col} from "react-bootstrap";
-import SingleCard from "../singlecard/SingleCard";
-import Btntop from "../btntop/Btntop";
+import SingleCard from "./singlecard/SingleCard";
+import Btntop from "./btntop/Btntop";
 
 const AllTheBooks = ({ sectionTitle, data, maxResults }) => { 
   return (
@@ -12,7 +12,7 @@ const AllTheBooks = ({ sectionTitle, data, maxResults }) => {
           <Btntop selector={'#navbar'} />
         </Col>
       </Row>
-      <Row xs={2} md={4} lg={5} className="g-3 pt-4 ">
+      <Row xs={2} md={4} lg={5} xl={6} className="g-3 pt-4 ">
         {data.slice(0,maxResults).map((book, idx) => (
           <Col key={`book-${idx}`}>
             <SingleCard

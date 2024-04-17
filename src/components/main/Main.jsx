@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Hero from "../hero/Hero";
-import SwiperComp from "../swipercomp/SwiperComp";
-import HeroClaim from "../heroclaim/HeroClaim";
-import SearchForm from "../searchform/SearchForm";
+import SwiperComp from "../hero/swipercomp/SwiperComp";
+import HeroClaim from "../hero/heroclaim/HeroClaim";
+import SearchForm from "../hero/searchform/SearchForm";
 import AllTheBooks from "../allthebooks/AllTheBooks";
 
 import fantasy from "../../data/books/fantasy.json";
@@ -12,22 +12,24 @@ import horror from "../../data/books/horror.json";
 import romance from "../../data/books/romance.json";
 import scifi from "../../data/books/scifi.json";
 
-const Main = () => {
-  const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
-  const allCategories = [
-    { data: fantasy, title: "Fantasy" },
-    { data: history, title: "History" },
-    { data: horror, title: "Horror" },
-    { data: romance, title: "Romance" },
-    { data: scifi, title: "Sci-fi" },
-  ];
-  let [results, setResults] = useState([]);
+const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
+const allCategories = [
+  { data: fantasy, title: "Fantasy" },
+  { data: history, title: "History" },
+  { data: horror, title: "Horror" },
+  { data: romance, title: "Romance" },
+  { data: scifi, title: "Sci-fi" },
+];
 
+let randomCategory = allCategories[Math.round(Math.random() * allCategories.length)].data;
+
+const Main = () => {
+  let [results, setResults] = useState([]);
   return (
     <Container fluid="lg" className="mb-4">
       <Hero>
         <div className="col-12 col-md-6">
-          <SwiperComp category={horror} />
+          <SwiperComp data={randomCategory} />
         </div>
         <div className="col-12 col-md-6 order-first order-md-last ">
           <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
@@ -47,7 +49,7 @@ const Main = () => {
       {allCategories.map((category, index) => (
         <AllTheBooks
           key={`section-${index}`}
-          maxResults={10}
+          maxResults={12}
           sectionTitle={category.title}
           data={category.data}
         />
