@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { Form } from 'react-bootstrap'
 
+import './searchform.css'
+
 
 const SearchForm = (props) => {
   let [value, setValue] = useState('')
@@ -19,7 +21,7 @@ const SearchForm = (props) => {
   return (
     <div className='d-flex gap-3 w-75 flex-column flex-md-row mb-4'>
         <Form.Control type='text' placeholder='Type a title and...' className=' flex-grow-0' onChange={handleChange}/>
-        <HashLink to={'#results'} onClick={searchBook} className='btn btn-primary'>Explore</HashLink>
+        <HashLink to={'#results'} onClick={searchBook} className='btn btn-violet'>Explore</HashLink>
         
     </div>
   )

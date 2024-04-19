@@ -11,7 +11,7 @@ const Logo = ({ logoSrc, logoAlt, brandName }) => {
           height="40"
           className=""
         />{" "}
-        <span className="text-bg-light fs-2">{brandName}</span>
+        <h1 className=" d-inline lead fs-2 text-white ">{brandName}</h1>
       </Navbar.Brand>
   );
 };

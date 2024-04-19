@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
+import React, { useEffect, useState } from "react";
 import Hero from "../hero/Hero";
 import SwiperComp from "../hero/swipercomp/SwiperComp";
 import HeroClaim from "../hero/heroclaim/HeroClaim";
 import SearchForm from "../hero/searchform/SearchForm";
 import AllTheBooks from "../allthebooks/AllTheBooks";
+import ninjaFetch from "../../ninjafetch";
 
 import fantasy from "../../data/books/fantasy.json";
 import history from "../../data/books/history.json";
 import horror from "../../data/books/horror.json";
 import romance from "../../data/books/romance.json";
 import scifi from "../../data/books/scifi.json";
+import Btntop from "../btntop/Btntop";
 
 const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
 const allCategories = [
@@ -24,9 +25,24 @@ const allCategories = [
 let randomCategory = allCategories[Math.round(Math.random() * allCategories.length)].data;
 
 const Main = () => {
-  let [results, setResults] = useState([]);
+  const [results, setResults] = useState([]);
+  const [btnVisible, setBtnVisible] = useState(false)
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10 ) {
+      setBtnVisible(true)
+    } else {
+      setBtnVisible(false)
+    }
+  })
+
+  useEffect(() => {
+    ninjaFetch('https://striveschool-api.herokuapp.com/api/books/:asin/comments/')
+    .then(res => console.log(res))
+  }, [])
+
   return (
-    <Container fluid="lg" className="mb-4">
+    <div fluid="xxl" className="container-xxl mb-4">
       <Hero>
         <div className="col-12 col-md-6">
           <SwiperComp data={randomCategory} />
@@ -54,7 +70,8 @@ const Main = () => {
           data={category.data}
         />
       ))}
-    </Container>
+      {btnVisible && <Btntop selector={'#navbar'}/>}
+    </div>
   );
 };
 
