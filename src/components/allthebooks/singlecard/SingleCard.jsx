@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import LikeButton from "./likebutton/LikeButton";
 
-import "./singlecard.css";
 
-const SingleCard = ({ img, title }) => {
+import "./singlecard.css";
+import CommentButton from "./commentbutton/CommentButton";
+import StarsRate from "./starsrate/StarsRate";
+
+const SingleCard = ({ img, title, comments }) => {
   const [selected, setSelected] = useState(false);
+  const [commentsVisible, setCommentsVisible] = useState(false);
 
   return (
     <div
@@ -19,8 +23,19 @@ const SingleCard = ({ img, title }) => {
         <div className="col-8 ps-0 pe-2">
           <div className="h-100 card-body p-2 d-flex flex-column  justify-content-between ">
             <h5 className="card-title h6 ">{title}</h5>
-            <div className="card-text d-flex justify-content-end ">
-            <LikeButton status={selected} selectcard={setSelected}/>
+            <div className='overflow-hidden card-text position-relative '>
+                <div className={`comment-area position-absolute border-top ${commentsVisible ? 'show ' : ''}`}>
+                  Comment area
+                </div>
+            </div>
+            <div className="card-action d-flex justify-content-between border-top">
+              <div>
+                <StarsRate />
+              </div>
+              <div>
+              <CommentButton status={commentsVisible} clickBtn={setCommentsVisible}/>
+              <LikeButton status={selected} selectcard={setSelected}/>
+              </div>
             </div>
           </div>
         </div>

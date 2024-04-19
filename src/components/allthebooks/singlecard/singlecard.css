@@ -12,3 +12,13 @@
 .card {
     transition: box-shadow 250ms linear;
 }
+
+.comment-area {
+    top: 100%;
+    transition: all 250ms linear;
+    width: 100%;
+}
+
+.comment-area.show {
+    top: 0;
+}

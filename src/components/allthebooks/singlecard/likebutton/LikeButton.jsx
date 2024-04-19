@@ -40,7 +40,7 @@ const LikeButton = ({selectcard, status}) => {
   );
 
   return (
-    <button className="btn hover-up" onClick={handleClick}>
+    <button className="btn hover-up pb-0 " onClick={handleClick}>
       {clicked ? iconFill : icon}
     </button>
   );
