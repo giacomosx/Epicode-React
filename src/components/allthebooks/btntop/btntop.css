@@ -1,7 +1,0 @@
-.btn--top{
-    transition: all 250ms linear;
-}
-
-.btn--top:hover {
-    rotate: 360deg;
-}
