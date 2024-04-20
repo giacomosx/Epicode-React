@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Hero from "../hero/Hero";
 import SwiperComp from "../hero/swipercomp/SwiperComp";
 import HeroClaim from "../hero/heroclaim/HeroClaim";
 import SearchForm from "../hero/searchform/SearchForm";
 import AllTheBooks from "../allthebooks/AllTheBooks";
-import ninjaFetch from "../../ninjafetch";
 
 import fantasy from "../../data/books/fantasy.json";
 import history from "../../data/books/history.json";
@@ -36,11 +35,6 @@ const Main = () => {
     }
   })
 
-  useEffect(() => {
-    ninjaFetch('https://striveschool-api.herokuapp.com/api/books/:asin/comments/')
-    .then(res => console.log(res))
-  }, [])
-
   return (
     <div fluid="xxl" className="container-xxl mb-4">
       <Hero>
@@ -65,7 +59,7 @@ const Main = () => {
       {allCategories.map((category, index) => (
         <AllTheBooks
           key={`section-${index}`}
-          maxResults={12}
+          maxResults={6}
           sectionTitle={category.title}
           data={category.data}
         />

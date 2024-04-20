@@ -2,8 +2,9 @@
 
 
 :root {
-  --black: #2A282F;
-  --gray: #625F68;
+  --black-headline: #2A282F;
+  --black-body: #625F68;
+  --gray: #A8A6AC;
   --violet: #7949FF;
 }
 
@@ -23,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--black) !important;
+  color: var(--black-headline) !important;
 }
 
 .text-secondary {
@@ -36,6 +37,10 @@ h6 {
 
 .color--violet {
   color: var(--violet) !important;
+}
+
+.text-body {
+  color: var(--black-body) !important;
 }
 
 a {

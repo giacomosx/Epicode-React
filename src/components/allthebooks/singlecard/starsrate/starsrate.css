@@ -1,0 +1,12 @@
+.star-rate ion-icon {
+    color: #E2DEE9;
+    font-size: 16px;
+}
+
+.star-rate.fill ion-icon {
+    color: #F5BE2E;
+}
+
+span.text-secondary {
+    padding-bottom: 0.175rem;
+}

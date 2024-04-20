@@ -10,13 +10,14 @@ const AllTheBooks = ({ sectionTitle, data, maxResults }) => {
           <h3 className="h2">{sectionTitle}</h3>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={3}  className=" pt-4 row-gap-4 ">
+      <Row xs={1} md={2} xl={3}  className=" pt-4 row-gap-4 ">
         {data.slice(0,maxResults).map((book, idx) => (
           <Col key={`book-${idx}`}>
             <SingleCard
             title={book.title}
             img={book.img}
             price={book.price}
+            bookId={book.asin}
           />
           </Col>
 ))}
