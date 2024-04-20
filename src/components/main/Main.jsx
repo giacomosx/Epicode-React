@@ -59,7 +59,7 @@ const Main = () => {
       {allCategories.map((category, index) => (
         <AllTheBooks
           key={`section-${index}`}
-          maxResults={12}
+          maxResults={6}
           sectionTitle={category.title}
           data={category.data}
         />

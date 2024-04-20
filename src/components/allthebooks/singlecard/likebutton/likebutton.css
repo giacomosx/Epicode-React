@@ -1,7 +1,6 @@
-button.hover-up svg {
-    fill: #7949FF;
-    width: 16px;
-    height: 16px;
+.like-button ion-icon {
+    color: #7949FF;
+    font-size: 18px;
 }
 
 .hover-up {

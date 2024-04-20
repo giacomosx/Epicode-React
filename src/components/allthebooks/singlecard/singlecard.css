@@ -11,14 +11,14 @@
 
 .card {
     transition: box-shadow 250ms linear;
+    min-height: 190px;
 }
 
-.comment-area {
-    top: 100%;
-    transition: all 250ms linear;
-    width: 100%;
+.card-text {
+    max-height: 100px;
 }
 
-.comment-area.show {
-    top: 0;
+.list-icon ion-icon {
+    font-size: 18px;
+    color: #7949FF;
 }

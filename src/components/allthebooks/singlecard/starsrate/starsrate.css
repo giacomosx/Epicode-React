@@ -6,3 +6,7 @@
 .star-rate.fill ion-icon {
     color: #F5BE2E;
 }
+
+span.text-secondary {
+    padding-bottom: 0.175rem;
+}
