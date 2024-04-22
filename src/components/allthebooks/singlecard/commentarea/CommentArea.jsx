@@ -6,7 +6,7 @@ const CommentArea = ({ bookId }) => {
   const [response, setResponse] = useState(false);
 
   const handleChange = (e) => {
-    setComment({ comment: e.target.value, rate: "5", elementId: bookId });
+    setComment({ comment: e.target.value, rate: "5", elementId: `${bookId}` });
   };
 
   const handleClick = () => {
