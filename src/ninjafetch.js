@@ -1,5 +1,5 @@
 const ninjaFetch = async (endpoint, options = {}) => {
-const APIKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTM1MTgzMzMsImV4cCI6MTcxNDcyNzkzM30.zldkCTA8Vpo0zUOyBD_6EgIzqd1cVNivraSJiWet7aQ'
+const APIKEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTM3OTU3MTIsImV4cCI6MTcxNTAwNTMxMn0.7oRDb0oNzyyBd9z6l4oXh7lzg39fpVFebWJCeR_adZs'
   const reqOptions = {
     method: options.method || 'GET',
     headers: {

@@ -1,8 +1,9 @@
 import React from "react";
 
-const Listcommentbutton = ({ status, clickBtn }) => {
+const Listcommentbutton = ({ status, clickBtn, setDependencies }) => {
   const handleClick = () => {
     clickBtn(!status);
+    setDependencies(false)
   };
 
   return (

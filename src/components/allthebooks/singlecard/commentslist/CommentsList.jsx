@@ -27,7 +27,7 @@ const CommentsList = ({ bookId }) => {
       <ul className="p-0 m-0 h-100">
         {list.map((item, index) => (
           <li className="small p-0 mb-1 " key={`comment-${index}`}>
-            <span className="color--violet small"> {item.author}: </span>
+            <span className="text-black small"> {item.author}: </span>
             <p className="p-0 m-0 small text-body">{item.comment}</p>
           </li>
         ))}
