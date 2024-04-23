@@ -1,3 +1,4 @@
+import ToggleTheme from "../toogletheme/ToggleTheme";
 import Logo from "./logo/Logo";
 import Navlist from "./navlist/Navlist";
 
@@ -7,6 +8,7 @@ const TopNavbar = () => {
       <div className="py-1 d-flex justify-content-between w-100 container-lg">
         <Logo logoAlt={'Logo Brand'} logoSrc={'./logo-296.svg'} brandName={'EpiBooks'}/>
         <Navlist className=" w-auto "/>
+        <ToggleTheme variant={'lh-1 hover-up d-none d-lg-block'}/>
       </div>
     </nav>
   );

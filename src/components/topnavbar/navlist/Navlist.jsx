@@ -1,6 +1,7 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import ToggleBtn from "../togglebtn/ToggleBtn";
 import "./navlist.css";
+import ToggleTheme from "../../toogletheme/ToggleTheme";
 
 const navLinks = [
   { title: "Fantasy", selector: "#fantasy" },
@@ -15,17 +16,15 @@ const Navlist = () => {
 
   const showMenu = () => {
     setVisible(!visible);
-  }
+  };
 
   return (
     <>
-      <ToggleBtn onClick={showMenu} />
-
-      <div
-        className={` navbar-collapse flex-grow-0 ${
-          visible ? 'show' : ''
-        } `}
-        >
+      <div className="d-flex align-items-center gap-2">
+        <ToggleBtn onClick={showMenu} />
+        <ToggleTheme variant={'lh-1 d-lg-none'} />
+      </div>
+      <div className={` navbar-collapse flex-grow-0 ${visible ? "show" : ""} `}>
         <ul className=" navbar-nav ">
           {navLinks.map((item, index) => (
             <li className="bg--violet nav-item main-nav-links" key={index}>
@@ -36,7 +35,6 @@ const Navlist = () => {
           ))}
         </ul>
       </div>
-
     </>
   );
 };

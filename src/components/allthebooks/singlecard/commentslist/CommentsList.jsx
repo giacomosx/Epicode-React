@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import ninjaFetch from "../../../../ninjafetch";
 
-const CommentsList = ({ bookId }) => {
+
+const CommentsList = ({ bookId, isDark }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,11 +24,11 @@ const CommentsList = ({ bookId }) => {
         </div>
       )}
 
-      <h6 className="small text-secondary m-0">Reviews:</h6>
+      <h6 className=" text-secondary m-0 small">Reviews:</h6>
       <ul className="p-0 m-0 h-100">
         {list.map((item, index) => (
           <li className="small p-0 mb-1 " key={`comment-${index}`}>
-            <span className="text-black small"> {item.author}: </span>
+            <span className={ `${isDark ? 'text-white' : 'text-black '}  small`}><span className="small icon-link star-rate fill">{item.rate}<ion-icon name="star"></ion-icon></span> - {item.author}: </span>
             <p className="p-0 m-0 small text-body">{item.comment}</p>
           </li>
         ))}
