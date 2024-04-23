@@ -4,7 +4,6 @@ import LikeButton from "./likebutton/LikeButton";
 
 import "./singlecard.css";
 import CommentButton from "./commentbutton/CommentButton";
-import StarsRate from "./starsrate/StarsRate";
 import Listcommentbutton from "./listcommentbutton/Listcommentbutton";
 import CommentsList from "./commentslist/CommentsList";
 import CommentArea from "./commentarea/CommentArea";
@@ -25,21 +24,17 @@ const SingleCard = ({ img, title, bookId }) => {
           </div>
         </div>
         <div className="col-8 ps-0 pe-2">
-          <div className="h-100 card-body p-2 d-flex flex-column  justify-content-between ">
-            <h5 className="card-title h6 m-0 pt-1">{title}</h5>
-            <div className='card-text h-100 overflow-y-scroll '>
+          <div className="h-100 card-body p-2 d-flex flex-column  justify-content-between">
+            <h5 className="card-title h6 pt-1">{title}</h5>
+            <div className='card-text overflow-y-scroll'>
                 {areaCommentVisible && <CommentArea bookId={bookId}/>}
                 {commentsVisible && <CommentsList bookId={bookId}/>}
             </div>
-            <div className="card-action d-flex justify-content-between border-top pe-1 ">
-              <div>
-                <StarsRate />
-              </div>
-              <div className="d-flex align-items-center gap-1">
+            <div className="card-action d-flex justify-content-end border-top pe-1 gap-3 ">
+              
               <CommentButton status={areaCommentVisible} clickBtn={setAreaCommentVisible} setDependencies={setCommentsVisible}/>
               <Listcommentbutton status={commentsVisible} clickBtn={setCommentsVisible} setDependencies={setAreaCommentVisible}/>
               <LikeButton status={selected} selectcard={setSelected}/>
-              </div>
             </div>
           </div>
         </div>
