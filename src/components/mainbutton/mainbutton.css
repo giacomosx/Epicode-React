@@ -1,0 +1,25 @@
+.btn-violet {
+    background-color: #7949FF;
+    color: #fff;
+    transition: all 250ms linear;
+}
+
+.btn-violet a {
+    color: #fff ;
+    text-decoration: none;
+}
+
+.btn-violet:hover, .btn-violet:focus {
+    background-color: #623AD2;
+    color: #fff;
+}
+
+.btn-violet:active {
+    background-color: #4C2CA6;
+    color: #fff;
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 0.375rem #7949FF;
+    border: 1px solid #7949FF;
+}

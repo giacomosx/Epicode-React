@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import './commentbutton.css'
 
 const CommentButton = ({ status, clickBtn, setDependencies }) => {
-  const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
-    setClicked(!clicked);
     clickBtn(!status);
     setDependencies(false)
   };

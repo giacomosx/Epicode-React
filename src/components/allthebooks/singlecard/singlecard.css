@@ -29,6 +29,11 @@
 }
 
 
+.bg--light-black {
+    background-color: #191919 !important;
+}
+
+
 @media only screen and (min-width: 1024px) {
     .card-text {
         height: 130px;

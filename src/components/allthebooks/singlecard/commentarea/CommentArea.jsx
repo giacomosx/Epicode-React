@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ninjaFetch from "../../../../ninjafetch";
 import StarsRate from "../starsrate/StarsRate";
+import MainButton from "../../../mainbutton/MainButton";
 
 const CommentArea = ({ bookId }) => {
   const [comment, setComment] = useState({});
@@ -19,7 +20,9 @@ const CommentArea = ({ bookId }) => {
     ninjaFetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
       method: "POST",
       body: comment,
-    }).then(() => setResponse(true))
+    }).then(() => {
+      setResponse(true)
+    })
   };
 
   return (
@@ -29,23 +32,18 @@ const CommentArea = ({ bookId }) => {
           Thank's for your review!
         </span>
       ) : (
-        <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2 small">
+        <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2">
           <div>
-            <h6 className="small text-secondary m-0">Get a review:</h6>
+            <h6 className="text-secondary m-0 small">Get a review:</h6>
             <StarsRate rate={rate} setRate={setRate} />
             <textarea
-              className="form-control mt-1 "
+              className="form-control mt-1 form-control-sm "
               placeholder="What about of this book?"
               onChange={handleChange}
               name="comment"
             ></textarea>
           </div>
-          <button
-            className=" btn btn-sm  bg--violet text-white"
-            onClick={handleClick}
-          >
-            Send
-          </button>
+          <MainButton onClick={handleClick} className="btn-sm">Send</MainButton>
         </div>
       )}
     </>

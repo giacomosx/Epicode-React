@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Hero from "../hero/Hero";
 import SwiperComp from "../hero/swipercomp/SwiperComp";
 import HeroClaim from "../hero/heroclaim/HeroClaim";
@@ -11,6 +11,7 @@ import horror from "../../data/books/horror.json";
 import romance from "../../data/books/romance.json";
 import scifi from "../../data/books/scifi.json";
 import Btntop from "../btntop/Btntop";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
 const allCategories = [
@@ -27,6 +28,8 @@ const Main = () => {
   const [results, setResults] = useState([]);
   const [btnVisible, setBtnVisible] = useState(false)
 
+  const {isDark} = useContext(ThemeContext)
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10 ) {
       setBtnVisible(true)
@@ -36,7 +39,7 @@ const Main = () => {
   })
 
   return (
-    <div fluid="xxl" className="container-xxl mb-4">
+    <div fluid="xxl" className={`container-xxl mb-4`}>
       <Hero>
         <div className="col-12 col-md-6">
           <SwiperComp data={randomCategory} />
@@ -48,13 +51,14 @@ const Main = () => {
               claim={
                 "Discover, read, love. The books you desire, just a click away."
               }
+              isDark={isDark}
             />
             <SearchForm setresult={setResults} allbooks={allBooks} />
           </div>
         </div>
       </Hero>
       {results.length > 0 && (
-        <AllTheBooks maxResults={30} sectionTitle={"Results"} data={results} />
+        <AllTheBooks maxResults={30} sectionTitle={"Results"} data={results} isDark={isDark} />
       )}
       {allCategories.map((category, index) => (
         <AllTheBooks
@@ -62,6 +66,7 @@ const Main = () => {
           maxResults={6}
           sectionTitle={category.title}
           data={category.data}
+          isDark={isDark}
         />
       ))}
       {btnVisible && <Btntop selector={'#navbar'}/>}
