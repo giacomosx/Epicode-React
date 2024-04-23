@@ -13,7 +13,7 @@ const CommentButton = ({ status, clickBtn, setDependencies }) => {
 
   return (
     <button className="btn hover-up pb-0 px-1 lh-1 comment-button" onClick={handleClick}>
-      <ion-icon name={clicked ? "chatbox" : "chatbox-outline"}></ion-icon>
+      <ion-icon name={status ? "chatbox" : "chatbox-outline"}></ion-icon>
     </button>
   );
 };

@@ -16,7 +16,7 @@ const CommentsList = ({ bookId }) => {
   }, []);
 
   return (
-    <div className="comment-area overflow-y-scroll h-100 pt-2 pe-1 m-0">
+    <div className="comment-area overflow-y-scroll h-100 pe-1 m-0">
       {loading && (
         <div className="d-flex justify-content-center w-100 h-100 align-items-center ">
             <Spinner animation="grow" className="color--violet"/>

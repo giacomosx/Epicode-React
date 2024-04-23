@@ -15,10 +15,22 @@
 }
 
 .card-text {
-    max-height: 100px;
+    height: 90px;
 }
 
 .list-icon ion-icon {
     font-size: 18px;
     color: #7949FF;
+}
+
+.comment-area textarea:focus {
+    box-shadow: 0 0 0.375rem #7949FF;
+    border: 1px solid #7949FF;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .card-text {
+        height: 130px;
+    }
 }
