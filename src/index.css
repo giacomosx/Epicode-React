@@ -5,8 +5,9 @@
   --black-headline: #2A282F;
   --black-body: #625F68;
   --gray: #A8A6AC;
-  --violet: #7949FF;
-  --white: #f4f4f4
+  --violet: #7949FF; /* not used */
+  --white: #f4f4f4;
+  --purple: var(--bs-purple)
 }
 
 
@@ -33,11 +34,11 @@ h6 {
 }
 
 .bg--violet {
-  background-color: var(--violet) !important;
+  background-color: var(--purple) !important;
 }
 
 .color--violet {
-  color: var(--violet) !important;
+  color: var(--purple) !important;
 }
 
 .text-body {
@@ -45,7 +46,7 @@ h6 {
 }
 
 a {
-  color: var(--violet);
+  color: var(--purple);
 }
 
 .bg--light-black {

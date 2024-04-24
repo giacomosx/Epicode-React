@@ -1,5 +1,10 @@
+:root {
+    --purple:var(--bs-purple)
+}
+
+
 .btn-violet {
-    background-color: #7949FF;
+    background-color: var(--purple);
     color: #fff;
     transition: all 250ms linear;
 }
