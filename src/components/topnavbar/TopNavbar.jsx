@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import ToggleTheme from "../toogletheme/ToggleTheme";
 import Logo from "./logo/Logo";
 import Navlist from "./navlist/Navlist";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const TopNavbar = () => {
+  const {isDark} = useContext(ThemeContext)
+
   return (
-    <nav className="bg--violet y-2 navbar navbar-expand-lg shadow-sm" id="navbar" >
+    <nav className={`y-2 navbar navbar-expand-lg shadow-sm ${isDark ? 'bg-dark' : 'bg--violet'}`} id="navbar" >
       <div className="py-1 d-flex justify-content-between w-100 container-lg">
         <Logo logoAlt={'Logo Brand'} logoSrc={'./logo-296.svg'} brandName={'EpiBooks'}/>
         <Navlist className=" w-auto "/>

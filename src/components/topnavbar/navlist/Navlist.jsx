@@ -27,7 +27,7 @@ const Navlist = () => {
       <div className={` navbar-collapse flex-grow-0 ${visible ? "show" : ""} `}>
         <ul className=" navbar-nav ">
           {navLinks.map((item, index) => (
-            <li className="bg--violet nav-item main-nav-links" key={index}>
+            <li className=" nav-item main-nav-links" key={index}>
               <a href={item.selector} className="text-white nav-link">
                 {item.title}
               </a>

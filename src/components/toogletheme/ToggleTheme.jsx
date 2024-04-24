@@ -12,7 +12,7 @@ const ToggleTheme = ({variant}) => {
     }, [isDark])
 
   return (
-    <button onClick={toggleTheme} className={`${variant} btn text-white p-0 fs-4 `}>{isDark ? <ion-icon name="sunny"></ion-icon> : <ion-icon name="moon"></ion-icon>}</button>
+    <button onClick={toggleTheme} className={`${variant} btn text-white p-0 fs-5 `}>{isDark ? <ion-icon name="moon"></ion-icon> : <ion-icon name="sunny"></ion-icon>}</button>
   )
 }
 
