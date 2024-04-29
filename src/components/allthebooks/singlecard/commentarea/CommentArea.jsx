@@ -3,16 +3,17 @@ import ninjaFetch from "../../../../ninjafetch";
 import StarsRate from "../starsrate/StarsRate";
 import MainButton from "../../../mainbutton/MainButton";
 
-const CommentArea = ({ bookId }) => {
+const CommentArea = ({ idBook }) => {
   const [comment, setComment] = useState({});
   const [response, setResponse] = useState(false);
   const [rate, setRate] = useState(0);
+  console.log(idBook);
 
   const handleChange = (e) => {
     setComment({
       comment: e.target.value,
       rate: `${rate}`,
-      elementId: `${bookId}`,
+      elementId: `${idBook}`,
     });
   };
 
@@ -32,7 +33,7 @@ const CommentArea = ({ bookId }) => {
           Thank's for your review!
         </span>
       ) : (
-        <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2">
+        <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2 my-3 ">
           <div>
             <h6 className="text-secondary m-0 small">Get a review:</h6>
             <StarsRate rate={rate} setRate={setRate} />

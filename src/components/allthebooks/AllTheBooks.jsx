@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col} from "react-bootstrap";
 import SingleCard from "./singlecard/SingleCard";
 
-const AllTheBooks = ({ sectionTitle, data, maxResults, isDark }) => { 
+const AllTheBooks = ({ sectionTitle, data, maxResults, isDark, setIdBook }) => { 
   return (
     <section id={`${sectionTitle.toLowerCase().split().join('-')}`} className="py-4">
       <Row className={`border-top pt-4 ${isDark && 'border-secondary '}`}>
@@ -18,6 +18,7 @@ const AllTheBooks = ({ sectionTitle, data, maxResults, isDark }) => {
             img={book.img}
             price={book.price}
             bookId={book.asin}
+            setIdBook={setIdBook}
           />
           </Col>
 ))}

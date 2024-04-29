@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ToggleBtn from "../togglebtn/ToggleBtn";
 import "./navlist.css";
 import ToggleTheme from "../../toogletheme/ToggleTheme";
+import MainButton from "../../mainbutton/MainButton";
 
 const navLinks = [
   { title: "Fantasy", selector: "#fantasy" },
@@ -11,8 +12,10 @@ const navLinks = [
   { title: "Sci-fi", selector: "#sci-fi" },
 ];
 
-const Navlist = () => {
+const Navlist = ({showSidebar, setShowSidebar}) => {
   const [visible, setVisible] = useState(false);
+
+  const handleClick = () => setShowSidebar(!showSidebar)
 
   const showMenu = () => {
     setVisible(!visible);
@@ -20,7 +23,8 @@ const Navlist = () => {
 
   return (
     <>
-      <div className="d-flex align-items-center gap-2">
+      <div className="d-flex align-items-center gap-2 d-lg-none">
+        <MainButton onClick={handleClick}>show</MainButton>
         <ToggleBtn onClick={showMenu} />
         <ToggleTheme variant={'lh-1 d-lg-none'} />
       </div>

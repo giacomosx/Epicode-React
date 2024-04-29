@@ -22,55 +22,56 @@ const allCategories = [
   { data: scifi, title: "Sci-fi" },
 ];
 
-let randomCategory = allCategories[Math.round(Math.random() * allCategories.length)].data;
+let randomCategory =
+  allCategories[Math.round(Math.random() * allCategories.length)].data;
 
-const Main = () => {
+const Main = ({setIdBook}) => {
   const [results, setResults] = useState([]);
-  const [btnVisible, setBtnVisible] = useState(false)
 
-  const {isDark} = useContext(ThemeContext)
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10 ) {
-      setBtnVisible(true)
-    } else {
-      setBtnVisible(false)
-    }
-  })
+  const { isDark } = useContext(ThemeContext);
 
   return (
-    <div fluid="xxl" className={`container-xxl mb-4`}>
-      <Hero>
-        <div className="col-12 col-md-6">
-          <SwiperComp data={randomCategory} />
-        </div>
-        <div className="col-12 col-md-6 order-first order-md-last ">
-          <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
-            <HeroClaim
-              title={"Welcome to EpiBooks!"}
-              claim={
-                "Discover, read, love. The books you desire, just a click away."
-              }
-              isDark={isDark}
-            />
-            <SearchForm setresult={setResults} allbooks={allBooks} />
+    <>
+      <div className="col-lg-9 overflow-y-scroll offset-lg-3 ">
+        <Hero>
+          <div className="col-12 col-md-6">
+            <SwiperComp data={randomCategory} />
           </div>
-        </div>
-      </Hero>
-      {results.length > 0 && (
-        <AllTheBooks maxResults={30} sectionTitle={"Results"} data={results} isDark={isDark} />
-      )}
-      {allCategories.map((category, index) => (
-        <AllTheBooks
-          key={`section-${index}`}
-          maxResults={6}
-          sectionTitle={category.title}
-          data={category.data}
-          isDark={isDark}
-        />
-      ))}
-      {btnVisible && <Btntop selector={'#navbar'}/>}
-    </div>
+          <div className="col-12 col-md-6 order-first order-md-last ">
+            <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
+              <HeroClaim
+                title={"Welcome to EpiBooks!"}
+                claim={
+                  "Discover, read, love. The books you desire, just a click away."
+                }
+                isDark={isDark}
+              />
+              <SearchForm setresult={setResults} allbooks={allBooks} />
+            </div>
+          </div>
+        </Hero>
+        {results.length > 0 && (
+          <AllTheBooks
+            maxResults={30}
+            sectionTitle={"Results"}
+            data={results}
+            isDark={isDark}
+            setIdBook={setIdBook}
+          />
+        )}
+        {allCategories.map((category, index) => (
+          <AllTheBooks
+            key={`section-${index}`}
+            maxResults={6}
+            sectionTitle={category.title}
+            data={category.data}
+            isDark={isDark}
+            setIdBook={setIdBook}
+          />
+        ))}
+      </div>
+      
+    </>
   );
 };
 
