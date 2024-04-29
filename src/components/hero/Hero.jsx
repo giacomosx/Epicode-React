@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = ({children}) => {
   return (
-    <section className="row py-4 ">
+    <section className="row py-4 " >
       {children}
     </section>
   );

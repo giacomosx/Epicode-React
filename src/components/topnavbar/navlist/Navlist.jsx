@@ -24,7 +24,7 @@ const Navlist = ({showSidebar, setShowSidebar}) => {
   return (
     <>
       <div className="d-flex align-items-center gap-2 d-lg-none">
-        <MainButton onClick={handleClick}>show</MainButton>
+        <MainButton onClick={handleClick} className="fs-3 p-0 lh-1"><ion-icon name="chatbox-ellipses-outline"></ion-icon></MainButton>
         <ToggleBtn onClick={showMenu} />
         <ToggleTheme variant={'lh-1 d-lg-none'} />
       </div>

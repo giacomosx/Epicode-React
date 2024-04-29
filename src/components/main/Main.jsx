@@ -32,7 +32,7 @@ const Main = ({setIdBook}) => {
 
   return (
     <>
-      <div className="col-lg-9 overflow-y-scroll offset-lg-3 ">
+      <div className="col-lg-9 overflow-y-scroll offset-lg-3  ">
         <Hero>
           <div className="col-12 col-md-6">
             <SwiperComp data={randomCategory} />

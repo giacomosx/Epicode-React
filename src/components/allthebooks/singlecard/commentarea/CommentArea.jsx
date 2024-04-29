@@ -23,14 +23,15 @@ const CommentArea = ({ idBook }) => {
       body: comment,
     }).then(() => {
       setResponse(true)
+      setRate(0)
     })
   };
 
   return (
     <>
       {response ? (
-        <span className="alert bg-success-subtle text-success mt-2 d-block">
-          Thank's for your review!
+        <span className="alert bg-success-subtle text-success mt-2 d-block position-relative ">
+          Thank's for your review! <span className="small text-decoration-underline " onClick={() => setResponse(false)}>(close)</span>
         </span>
       ) : (
         <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2 my-3 ">

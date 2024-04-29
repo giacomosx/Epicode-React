@@ -7,12 +7,12 @@ const Sidebar = ({ idBook, showSidebar, setShowSidebar }) => {
   const handleClose = () => setShowSidebar(false);
 
   return (
-    <div className="col-lg-3 position-fixed ">
+    <div className="col-lg-3  position-fixed ">
       <Offcanvas show={showSidebar} onHide={handleClose} responsive="lg">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Book reviews:</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body className="flex-column pt-4">
+        <Offcanvas.Body className="flex-column pt-4 px-2">
           {idBook && (
             <>
               <CommentsList idBook={idBook} />
