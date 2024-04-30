@@ -35,7 +35,7 @@ const CommentArea = ({ idBook, setIdBook}) => {
           Thank's for your review! <span className="small text-decoration-underline cursor-pointer" onClick={() => setResponse(false)}>(close)</span>
         </span>
       ) : (
-        <div className=" d-flex flex-column gap-2  bg-white rounded px-2 py-3">
+        <div className=" d-flex flex-column gap-2  bg-white rounded px-2 py-3 shadow-sm ">
           
             <h6 className="text-secondary m-0 small">Get a review:</h6>
             <StarsRate rate={rate} setRate={setRate} />

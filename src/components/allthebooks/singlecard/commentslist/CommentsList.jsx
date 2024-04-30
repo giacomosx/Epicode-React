@@ -19,7 +19,7 @@ const CommentsList = ({ idBook }) => {
   }, [idBook]);
 
   return (
-    <div className="comment-area rounded m-0 my-3 bg-white py-3  px-2">
+    <div className="comment-area rounded m-0 my-3 bg-white py-3  px-2 shadow-sm ">
       {loading ? (
         <div className="d-flex justify-content-center w-100 h-100 align-items-center ">
           <Spinner animation="grow" className="color--violet" />

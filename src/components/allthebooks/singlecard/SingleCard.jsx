@@ -13,7 +13,7 @@ const SingleCard = ({ img, title, bookId, setIdBook }) => {
     <div
       className={`${
         isDark ? "bg-dark text-bg-dark " : ""
-      } border-0 card h-100  shadow-sm} flex-row g-0 rounded-4 `}
+      } border-0 card h-100  shadow-sm flex-row g-0 rounded-4 `}
     >
       <div className="row">
         <div className="col-4 pe-0">
