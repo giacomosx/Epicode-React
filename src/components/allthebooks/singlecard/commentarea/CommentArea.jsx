@@ -3,11 +3,10 @@ import ninjaFetch from "../../../../ninjafetch";
 import StarsRate from "../starsrate/StarsRate";
 import MainButton from "../../../mainbutton/MainButton";
 
-const CommentArea = ({ idBook }) => {
+const CommentArea = ({ idBook, setIdBook}) => {
   const [comment, setComment] = useState({});
   const [response, setResponse] = useState(false);
   const [rate, setRate] = useState(0);
-  console.log(idBook);
 
   const handleChange = (e) => {
     setComment({
@@ -18,24 +17,26 @@ const CommentArea = ({ idBook }) => {
   };
 
   const handleClick = () => {
+    
     ninjaFetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
       method: "POST",
       body: comment,
     }).then(() => {
       setResponse(true)
       setRate(0)
+      setIdBook(idBook)
     })
   };
 
   return (
     <>
       {response ? (
-        <span className="alert bg-success-subtle text-success mt-2 d-block position-relative ">
-          Thank's for your review! <span className="small text-decoration-underline " onClick={() => setResponse(false)}>(close)</span>
+        <span className="alert bg-success-subtle text-success mt-2 d-block position-relative small ">
+          Thank's for your review! <span className="small text-decoration-underline cursor-pointer" onClick={() => setResponse(false)}>(close)</span>
         </span>
       ) : (
-        <div className="comment-area overflow-y-scroll h-100 m-0 d-flex flex-column w-100 gap-2 ps-1 pe-3 pb-2 my-3 ">
-          <div>
+        <div className=" d-flex flex-column gap-2  bg-white rounded px-2 py-3">
+          
             <h6 className="text-secondary m-0 small">Get a review:</h6>
             <StarsRate rate={rate} setRate={setRate} />
             <textarea
@@ -44,7 +45,7 @@ const CommentArea = ({ idBook }) => {
               onChange={handleChange}
               name="comment"
             ></textarea>
-          </div>
+          
           <MainButton onClick={handleClick} className="btn-sm">Send</MainButton>
         </div>
       )}

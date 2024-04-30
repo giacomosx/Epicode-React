@@ -53,4 +53,10 @@ a {
   background-color: #191919 !important;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
 
+.right-0 {
+  right: 0;
+}

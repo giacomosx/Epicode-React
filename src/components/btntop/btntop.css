@@ -4,7 +4,7 @@
 
 .btn--top {
     transition: all 250ms linear;
-    right: 1rem;
+    left: 1rem;
     bottom: 1rem;
     background-color: var(--purple);
     padding: 0.5rem;

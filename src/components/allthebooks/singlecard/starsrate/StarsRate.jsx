@@ -16,7 +16,7 @@ const StarsRate = ({rate, setRate}) => {
           <ion-icon name="star"></ion-icon>
         </button>
       ))}
-      <span className="text-secondary ms-1 align-self-start d-none d-lg-block ">
+      <span className="text-secondary ms-1 align-self-start d-none d-lg-block small">
         {rate}/5
       </span>
     </div>

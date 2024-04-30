@@ -24,8 +24,8 @@ const App = () => {
       <TopNavbar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
       <div className={`container-fluid mb-4 pt-5`} id="navbar">
         <div className="row pt-3 ">
-        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} idBook={idBook}/>
-        <Main setIdBook={setIdBook}/>
+        <Main setIdBook={setIdBook} />
+        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} idBook={idBook} setIdBook={setIdBook}/>
         </div>
       </div>
       <Footer />
