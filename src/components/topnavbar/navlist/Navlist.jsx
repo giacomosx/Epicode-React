@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ToggleBtn from "../togglebtn/ToggleBtn";
-import MainButton from "../../mainbutton/MainButton";
 import ThemeButton from "../../themebutton/ThemeButton";
 import "./navlist.css";
 
@@ -12,10 +11,8 @@ const navLinks = [
   { title: "Sci-fi", selector: "#sci-fi" },
 ];
 
-const Navlist = ({ showSidebar, setShowSidebar }) => {
+const Navlist = () => {
   const [visible, setVisible] = useState(false);
-
-  const handleClick = () => setShowSidebar(!showSidebar);
 
   const showMenu = () => {
     setVisible(!visible);
@@ -24,9 +21,6 @@ const Navlist = ({ showSidebar, setShowSidebar }) => {
   return (
     <>
       <div className="d-flex align-items-center gap-2 d-lg-none">
-        <MainButton onClick={handleClick} className="fs-3 p-0 lh-1">
-          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-        </MainButton>
         <ToggleBtn onClick={showMenu} />
         <ThemeButton variant={"lh-1 d-lg-none"} />
       </div>

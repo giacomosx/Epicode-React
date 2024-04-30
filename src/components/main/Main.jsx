@@ -28,23 +28,23 @@ const Main = () => {
 
   return (
     <>
-      <div className="col-lg-9 overflow-y-scroll ">
-        <Hero>
-          <div className="col-12 col-md-6">
-            <SwiperComp data={randomCategory} />
+      <Hero>
+        <div className="col-12 col-md-6">
+          <SwiperComp data={randomCategory} />
+        </div>
+        <div className="col-12 col-md-6 order-first order-md-last ">
+          <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
+            <HeroClaim
+              title={"Welcome to EpiBooks!"}
+              claim={
+                "Discover, read, love. The books you desire, just a click away."
+              }
+            />
+            <SearchForm setresult={setResults} allbooks={allBooks} />
           </div>
-          <div className="col-12 col-md-6 order-first order-md-last ">
-            <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
-              <HeroClaim
-                title={"Welcome to EpiBooks!"}
-                claim={
-                  "Discover, read, love. The books you desire, just a click away."
-                }
-              />
-              <SearchForm setresult={setResults} allbooks={allBooks} />
-            </div>
-          </div>
-        </Hero>
+        </div>
+      </Hero>
+      <div className="col-12 ">
         {results.length > 0 && (
           <AllTheBooks
             maxResults={30}
@@ -61,7 +61,6 @@ const Main = () => {
           />
         ))}
       </div>
-      
     </>
   );
 };
