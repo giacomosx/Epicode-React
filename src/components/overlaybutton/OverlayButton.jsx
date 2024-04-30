@@ -1,7 +1,7 @@
 import React from "react";
-import "./btntop.css";
+import "./overlaybutton.css";
 
-const Btntop = ({ selector }) => {
+const OverlayButton = ({ selector }) => {
   return (
     <a href={selector} title="Go up" className="btn--top position-fixed ">
       <img src="./icons/arrow-up.svg" alt="Top" width={25} height={25} />
@@ -9,4 +9,4 @@ const Btntop = ({ selector }) => {
   );
 };
 
-export default Btntop;
+export default OverlayButton;

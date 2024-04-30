@@ -1,0 +1,8 @@
+:root {
+    --purple: var(--bs-purple)
+}
+
+.icon-button ion-icon {
+    color: var(--purple);
+    font-size: 18px;
+}

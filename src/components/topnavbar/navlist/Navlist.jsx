@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ToggleBtn from "../togglebtn/ToggleBtn";
-import "./navlist.css";
-import ToggleTheme from "../../toogletheme/ToggleTheme";
 import MainButton from "../../mainbutton/MainButton";
+import ThemeButton from "../../themebutton/ThemeButton";
+import "./navlist.css";
 
 const navLinks = [
   { title: "Fantasy", selector: "#fantasy" },
@@ -12,10 +12,10 @@ const navLinks = [
   { title: "Sci-fi", selector: "#sci-fi" },
 ];
 
-const Navlist = ({showSidebar, setShowSidebar}) => {
+const Navlist = ({ showSidebar, setShowSidebar }) => {
   const [visible, setVisible] = useState(false);
 
-  const handleClick = () => setShowSidebar(!showSidebar)
+  const handleClick = () => setShowSidebar(!showSidebar);
 
   const showMenu = () => {
     setVisible(!visible);
@@ -24,9 +24,11 @@ const Navlist = ({showSidebar, setShowSidebar}) => {
   return (
     <>
       <div className="d-flex align-items-center gap-2 d-lg-none">
-        <MainButton onClick={handleClick} className="fs-3 p-0 lh-1"><ion-icon name="chatbox-ellipses-outline"></ion-icon></MainButton>
+        <MainButton onClick={handleClick} className="fs-3 p-0 lh-1">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </MainButton>
         <ToggleBtn onClick={showMenu} />
-        <ToggleTheme variant={'lh-1 d-lg-none'} />
+        <ThemeButton variant={"lh-1 d-lg-none"} />
       </div>
       <div className={` navbar-collapse flex-grow-0 ${visible ? "show" : ""} `}>
         <ul className=" navbar-nav ">

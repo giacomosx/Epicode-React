@@ -3,7 +3,7 @@ import {Navbar } from "react-bootstrap";
 
 const Logo = ({ logoSrc, logoAlt, brandName }) => {
   return (
-      <Navbar.Brand href="./index.html">
+      <Navbar.Brand href="/">
         <img
           alt={logoAlt}
           src={logoSrc}

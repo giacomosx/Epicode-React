@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Hero from "../hero/Hero";
 import SwiperComp from "../hero/swipercomp/SwiperComp";
 import HeroClaim from "../hero/heroclaim/HeroClaim";
@@ -10,8 +10,6 @@ import history from "../../data/books/history.json";
 import horror from "../../data/books/horror.json";
 import romance from "../../data/books/romance.json";
 import scifi from "../../data/books/scifi.json";
-import Btntop from "../btntop/Btntop";
-import { ThemeContext } from "../../contexts/ThemeContext";
 
 const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
 const allCategories = [
@@ -25,10 +23,8 @@ const allCategories = [
 let randomCategory =
   allCategories[Math.round(Math.random() * allCategories.length)].data;
 
-const Main = ({setIdBook}) => {
+const Main = () => {
   const [results, setResults] = useState([]);
-
-  const { isDark } = useContext(ThemeContext);
 
   return (
     <>
@@ -44,7 +40,6 @@ const Main = ({setIdBook}) => {
                 claim={
                   "Discover, read, love. The books you desire, just a click away."
                 }
-                isDark={isDark}
               />
               <SearchForm setresult={setResults} allbooks={allBooks} />
             </div>
@@ -55,8 +50,6 @@ const Main = ({setIdBook}) => {
             maxResults={30}
             sectionTitle={"Results"}
             data={results}
-            isDark={isDark}
-            setIdBook={setIdBook}
           />
         )}
         {allCategories.map((category, index) => (
@@ -65,8 +58,6 @@ const Main = ({setIdBook}) => {
             maxResults={6}
             sectionTitle={category.title}
             data={category.data}
-            isDark={isDark}
-            setIdBook={setIdBook}
           />
         ))}
       </div>

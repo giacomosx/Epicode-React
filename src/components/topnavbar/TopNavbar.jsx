@@ -1,4 +1,4 @@
-import ToggleTheme from "../toogletheme/ToggleTheme";
+import ThemeButton from "../themebutton/ThemeButton";
 import Logo from "./logo/Logo";
 import Navlist from "./navlist/Navlist";
 
@@ -9,7 +9,7 @@ const TopNavbar = ({showSidebar, setShowSidebar}) => {
       <div className="py-1 d-flex justify-content-between w-100 container-fluid">
         <Logo logoAlt={'Logo Brand'} logoSrc={'./logo-296.svg'} brandName={'EpiBooks'}/>
         <Navlist showSidebar={showSidebar} setShowSidebar={setShowSidebar} className=" w-auto "/>
-        <ToggleTheme variant={'lh-1 hover-up d-none d-lg-block'}/>
+        <ThemeButton variant={'lh-1 hover-up d-none d-lg-block'}/>
       </div>
     </nav>
   );

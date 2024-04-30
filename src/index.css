@@ -5,7 +5,8 @@
   --black-headline: #2A282F;
   --black-body: #625F68;
   --gray: #A8A6AC;
-  --violet: #7949FF; /* not used */
+  --violet: #7949FF;
+  /* not used */
   --white: #f4f4f4;
   --purple: var(--bs-purple)
 }
@@ -53,10 +54,35 @@ a {
   background-color: #191919 !important;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
 .right-0 {
   right: 0;
+}
+
+.hover-up {
+  transition: all 250ms linear;
+}
+
+.hover-up:hover {
+  transform: translateY(-0.5rem);
+}
+
+.bg--light-black {
+  background-color: #191919 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--purple);
+  outline: 1px solid var(--purple);
 }

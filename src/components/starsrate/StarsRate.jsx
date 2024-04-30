@@ -1,8 +1,7 @@
 import React from "react";
 import "./starsrate.css";
 
-const StarsRate = ({rate, setRate}) => {
-
+const StarsRate = () => {
   const values = [1, 2, 3, 4, 5];
 
   return (
@@ -11,13 +10,12 @@ const StarsRate = ({rate, setRate}) => {
         <button
           key={`star-${index}`}
           className={`btn p-0  star-rate ${index < rate ? "fill" : ""}`}
-          onClick={() => setRate(value)}
         >
           <ion-icon name="star"></ion-icon>
         </button>
       ))}
       <span className="text-secondary ms-1 align-self-start d-none d-lg-block small">
-        {rate}/5
+        0/5
       </span>
     </div>
   );
