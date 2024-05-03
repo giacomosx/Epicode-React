@@ -34,8 +34,8 @@ const SwiperComp = ({ data }) => {
           },
         }}
       >
-        {data.map((book) => (
-          <SwiperSlide className="p-2 h-100 " key={`swiperBook-${book.asin}`}>
+        {data.map((book, indx) => (
+          <SwiperSlide className="p-2 h-100 " key={'swiper-' + indx}>
             <HeroCard title={book.title} img={book.img} price={book.price} />
           </SwiperSlide>
         ))}

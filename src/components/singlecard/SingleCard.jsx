@@ -1,8 +1,12 @@
 import React from "react";
 import IconButton from "../iconbutton/IconButton";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../../redux/sidebarSlice";
 import "./singlecard.css";
 
 const SingleCard = ({ img, title }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={`border-0 card h-100  shadow-sm flex-row g-0 rounded-4 `}>
       <div className="row">
@@ -22,7 +26,10 @@ const SingleCard = ({ img, title }) => {
             <div
               className={`card-action d-flex justify-content-end border-top pe-1 gap-3 `}
             >
-              <IconButton iconName={"chatbox-ellipses-outline"} />
+              <IconButton
+                iconName={"ellipsis-vertical"}
+                onClick={() => dispatch(toggleSidebar())}
+              />
             </div>
           </div>
         </div>

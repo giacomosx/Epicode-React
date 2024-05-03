@@ -9,7 +9,7 @@ const TopNavbar = () => {
       <div className="py-1 d-flex justify-content-between w-100 container-xxl">
         <Logo logoAlt={'Logo Brand'} logoSrc={'./logo-296.svg'} brandName={'EpiBooks'}/>
         <Navlist className=" w-auto "/>
-        <ThemeButton variant={'lh-1 hover-up d-none d-lg-block'}/>
+        <ThemeButton variant={'lh-1  d-none d-lg-block'}/>
       </div>
     </nav>
   );
