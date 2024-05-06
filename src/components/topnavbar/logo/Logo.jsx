@@ -1,9 +1,9 @@
 import React from "react";
-import {Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Logo = ({ logoSrc, logoAlt, brandName }) => {
   return (
-      <Navbar.Brand href="./index.html">
+      <Link to={'/'} className="navbar-brand">
         <img
           alt={logoAlt}
           src={logoSrc}
@@ -12,7 +12,7 @@ const Logo = ({ logoSrc, logoAlt, brandName }) => {
           className=""
         />{" "}
         <h1 className=" d-inline lead fs-2 text-white ">{brandName}</h1>
-      </Navbar.Brand>
+      </Link>
   );
 };
 

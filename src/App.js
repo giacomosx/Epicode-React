@@ -1,15 +1,19 @@
-import Footer from "./components/footer/Footer";
-import Main from "./components/main/Main";
-import TopNavbar from "./components/topnavbar/TopNavbar";
-import {ThemeProvider} from "./contexts/ThemeContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import Category from './pages/Category';
+import Book from "./pages/Book";
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <TopNavbar />
-      <Main />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Homepage />} />
+          <Route path={'/category/:categoryName'} element={<Category />} />
+          <Route path={'/book/:asin'} element={<Book />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

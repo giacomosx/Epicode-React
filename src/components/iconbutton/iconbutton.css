@@ -1,0 +1,17 @@
+:root {
+    --purple: var(--bs-purple)
+}
+
+.icon-button ion-icon {
+    color: var(--purple);
+    font-size: 18px;
+}
+
+.color-white ion-icon {
+    color: #f5f5f5 !important;
+    font-size: 24px;
+}
+
+.icon-button {
+    transition: all 250ms linear;
+}

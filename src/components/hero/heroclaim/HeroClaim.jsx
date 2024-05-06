@@ -1,6 +1,11 @@
 import React from "react";
+import { actualTheme } from "../../../redux/themeSlice";
+import { useSelector } from "react-redux";
 
-const HeroClaim = ({title, claim, isDark}) => {
+const HeroClaim = ({title, claim}) => {
+
+  const isDark = useSelector(actualTheme)
+
   return (
     <>
       <h1 className={`display-6 text-center ${isDark ? 'text-white ': ''}`}>{title}</h1>

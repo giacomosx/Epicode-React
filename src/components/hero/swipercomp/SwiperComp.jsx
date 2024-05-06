@@ -18,7 +18,6 @@ const SwiperComp = ({ data }) => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
-        spaceBetween={20}
         className="mySwiper"
         breakpoints={{
           768: {
@@ -26,15 +25,17 @@ const SwiperComp = ({ data }) => {
             spaceBetween: 10
           },
           1024: { 
-            slidesPerView: 2
+            slidesPerView: 2,
+            spaceBetween: 5,
           },
           1440: { 
-            slidesPerView: 3
+            slidesPerView: 3,
+            spaceBetween: 5
           },
         }}
       >
-        {data.map((book) => (
-          <SwiperSlide className="p-2 h-100 " key={`swiperBook-${book.asin}`}>
+        {data.map((book, indx) => (
+          <SwiperSlide className="p-2 h-100 " key={'swiper-' + indx}>
             <HeroCard title={book.title} img={book.img} price={book.price} />
           </SwiperSlide>
         ))}

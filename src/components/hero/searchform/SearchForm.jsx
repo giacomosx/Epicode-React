@@ -5,17 +5,22 @@ import { Form } from 'react-bootstrap'
 import './searchform.css'
 import MainButton from '../../mainbutton/MainButton'
 
+import { useDispatch } from 'react-redux'
+import { filterByTitle, resetResults } from '../../../redux/booksSlice'
 
-const SearchForm = (props) => {
+
+const SearchForm = () => {
   let [value, setValue] = useState('')
+
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setValue(e.target.value)
-    props.setresult([])
+    dispatch(resetResults())
   }
 
   const searchBook = () => {
-    props.setresult(props.allbooks.filter(book => book.title.toLowerCase().includes(value.toLowerCase())))
+    dispatch(filterByTitle(value))
   }
 
   
