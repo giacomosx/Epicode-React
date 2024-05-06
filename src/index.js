@@ -9,11 +9,15 @@ import App from "./App";
 import sidebarReducer from "./redux/sidebarSlice";
 import themeReducer from "./redux/themeSlice";
 import booksReducer from "./redux/booksSlice";
+import commentsReducer from "./redux/commentsSlice"
+import bookSelectedReducer from "./redux/bookSelectedSlice"
 
 const rootReducer = combineReducers({
   actualSidebarState: sidebarReducer,
   themeState: themeReducer,
   booksState: booksReducer,
+  commentsState: commentsReducer,
+  bookSelectedState: bookSelectedReducer
 });
 
 const store = configureStore({

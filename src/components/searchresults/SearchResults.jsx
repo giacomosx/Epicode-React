@@ -9,7 +9,7 @@ const SearchResults = () => {
   return (
     <>
       {results.length > 0 && (
-        <AllTheBooks maxResults={100} sectionTitle={"Results"} data={results} />
+        <AllTheBooks maxResults={100} sectionTitle={"Results"} data={results} borderBottom/>
       )}
     </>
   );

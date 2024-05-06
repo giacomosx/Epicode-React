@@ -83,3 +83,7 @@ a {
   background-color: var(--purple);
   outline: 1px solid var(--purple);
 }
+
+.star-commentlist ion-icon {
+  color: #F5BE2E;
+}
