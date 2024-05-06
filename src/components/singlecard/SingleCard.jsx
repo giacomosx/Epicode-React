@@ -25,6 +25,7 @@ const SingleCard = ({ img, title, asin, currentBookSelected }) => {
         selected ? "shadow--violet" : "shadow-sm "
       } ${isDark && 'bg-dark'}`}
       aria-selected={selected}
+      data-testid='card'
     >
       <div className="row">
         <div className="col-4 pe-0">

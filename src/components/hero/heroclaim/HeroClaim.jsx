@@ -8,7 +8,7 @@ const HeroClaim = ({title, claim}) => {
 
   return (
     <>
-      <h1 className={`display-6 text-center ${isDark ? 'text-white ': ''}`}>{title}</h1>
+      <h1 className={`display-6 text-center ${isDark ? 'text-white ': ''}`} data-testid={'welcome'}>{title}</h1>
       <blockquote className="text-secondary text-center blockquote fs-5 ">
         {claim}
       </blockquote>
