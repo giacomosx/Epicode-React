@@ -31,9 +31,9 @@ const Main = () => {
         <>
           <Hero>
             <div className="col-12 col-md-6">
-              <SwiperComp
+              {/* <SwiperComp
                 data={books.filter((book) => book.category === "fantasy")}
-              />
+              /> */}
             </div>
             <div className="col-12 col-md-6 order-first order-md-last ">
               <div className="p-3 d-flex flex-column align-items-center justify-content-center h-100">
