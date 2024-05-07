@@ -28,7 +28,7 @@ const CommentArea = () => {
   useEffect(() => {
     dispatch(getComments(endpoint))
     // eslint-disable-next-line
-  }, [currentBookSelected, response]);
+  }, []);
 
   return (
     <>
