@@ -1,11 +1,12 @@
 import React from "react";
 import CommentArea from "../commentarea/CommentArea";
-import { Offcanvas } from "react-bootstrap";
+import { CloseButton, Offcanvas } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar, sidebarState } from "../../redux/sidebarSlice";
 import { currentBook } from "../../redux/bookSelectedSlice";
 import { actualTheme } from "../../redux/themeSlice";
 import { useParams } from "react-router-dom";
+import LatestRelease from "../latestrelease/LatestRelease";
 
 
 const Sidebar = () => {
@@ -29,9 +30,11 @@ const Sidebar = () => {
         onHide={handleClick}
         placement="end"
         responsive="lg"
+        className={`${isDark ? 'bg--light-black' : ''}`}
       >
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Book reviews:</Offcanvas.Title>
+        <Offcanvas.Header>
+          <Offcanvas.Title className={`${isDark ? 'text-white ' : ''}`}>Book reviews:</Offcanvas.Title>
+          {isDark ? <CloseButton onClick={handleClick} variant='white' /> : <CloseButton onClick={handleClick} />}
         </Offcanvas.Header>
         <Offcanvas.Body className="flex-column pt-4 px-1 ">
           <div className="pt-4">
@@ -45,6 +48,7 @@ const Sidebar = () => {
               {currentBookSelected && <CommentArea />}
             </div>
           </div>
+            <LatestRelease />
         </Offcanvas.Body>
       </Offcanvas>
     </div>
