@@ -20,7 +20,7 @@ const AddComment = () => {
   const handleChange = (e) => {
     setReview({
       comment: e.target.value,
-      rate: `${rate}`,
+      rate: rate,
       elementId: currentBookSelected,
     });
   };

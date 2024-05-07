@@ -29,7 +29,7 @@ export const postComment = createAsyncThunk(
   "comments/POST",
   async (body) => {
     const APIKEY =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTM3OTU3MTIsImV4cCI6MTcxNTAwNTMxMn0.7oRDb0oNzyyBd9z6l4oXh7lzg39fpVFebWJCeR_adZs";
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTUxMDA0MDAsImV4cCI6MTcxNjMxMDAwMH0.awm-TsZJX_k9vGfjTNagxOIw8wFNCB44L9IP6MjkC_k";
     const reqOptions = {
       method: "POST",
       headers: {
@@ -58,7 +58,7 @@ export const deleteComment = createAsyncThunk(
   "comments/DELETE",
   async (id) => {
     const APIKEY =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTM3OTU3MTIsImV4cCI6MTcxNTAwNTMxMn0.7oRDb0oNzyyBd9z6l4oXh7lzg39fpVFebWJCeR_adZs";
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAxYzgwN2QwYjM3MTAwMWFhODk0YTEiLCJpYXQiOjE3MTUxMDA0MDAsImV4cCI6MTcxNjMxMDAwMH0.awm-TsZJX_k9vGfjTNagxOIw8wFNCB44L9IP6MjkC_k";
     const reqOptions = {
       method: "DELETE",
       headers: {
