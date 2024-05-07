@@ -9,7 +9,6 @@ import AllTheBooks from "../allthebooks/AllTheBooks";
 import { allBooks, getAllBooks, booksLoading } from "../../redux/booksSlice";
 import SearchResults from "../searchresults/SearchResults";
 
-//import fantasy from '../../data/fantasy.json'
 
 const Main = () => {
   const books = useSelector(allBooks);

@@ -9,5 +9,5 @@ test('check welcome rendering', () => {
     )
 
     const checkElement = screen.getByTestId('welcome')
-    expect(checkElement).toBeInTheDocument()
+    expect(checkElement).toBeInTheDocument()    
 })

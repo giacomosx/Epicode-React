@@ -1,12 +1,15 @@
-import {renderWithProviders} from './test-utils'
-import AllTheBooks from '../components/allthebooks/AllTheBooks'
-import { screen } from '@testing-library/react'
+import { renderWithProviders } from "./test-utils";
+import { screen } from "@testing-library/react";
+import AllTheBooks from "../components/allthebooks/AllTheBooks";
 
-test('cards count', () => {
-    renderWithProviders(
-        <AllTheBooks />
-    )
+import fantasy from '../fantasy.json'
 
-    const numberOfCards = screen.queryAllByRole('card')
-    expect(numberOfCards).toBeInTheDocument()
-})
+test("cards count", () => {
+
+  
+  renderWithProviders(<AllTheBooks data={fantasy}/>);
+
+  const numberOfCards = screen.getAllByTestId("card");
+  expect(numberOfCards).toHaveLength(150);
+});
+
