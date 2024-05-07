@@ -15,8 +15,9 @@ const SwiperComp = ({ data }) => {
         }}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
+        grabCursor
         modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
