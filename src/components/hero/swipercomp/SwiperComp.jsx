@@ -21,7 +21,8 @@ const SwiperComp = ({ data }) => {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 10,
+            autoplay: false
           },
           1024: { 
             slidesPerView: 2,
