@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import HeroCard from "../herocard/HeroCard";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,7 +17,7 @@ const SwiperComp = ({ data }) => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
           768: {
