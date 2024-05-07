@@ -15,7 +15,11 @@ const SwiperComp = ({ data }) => {
 
     // Object with parameters
     const params = {
-      slidesPerView: 3,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
       breakpoints: {
         768: {
           slidesPerView: 2,
