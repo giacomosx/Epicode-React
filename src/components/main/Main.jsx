@@ -18,7 +18,12 @@ const Main = () => {
   useEffect(() => {
     dispatch(getAllBooks("https://epibooks.onrender.com/"));
     // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
+
+
+  const filterBookbyCategory = () => {
+    return books && books.filter((book) => book.category === "fantasy")
+  }
 
   return (
     <>
@@ -32,7 +37,7 @@ const Main = () => {
           <Hero>
             <div className="col-12 col-md-6">
               <SwiperComp
-                data={books.filter((book) => book.category === "fantasy")}
+                data={filterBookbyCategory()}
               />
             </div>
             <div className="col-12 col-md-6 order-first order-md-last ">
