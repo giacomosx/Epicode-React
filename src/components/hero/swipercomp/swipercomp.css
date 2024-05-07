@@ -4,11 +4,11 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #7949FF;
+    color: #7949FF !important;
 }
 
-.swiper-pagination-bullet {
-    background-color: #7949FF;
+.swiper-pagination-bullet-bullet {
+    background-color: #7949FF !important;
 }
 
 

@@ -30,7 +30,7 @@ const LatestRelease = () => {
                       />
                     </div>
                     <div className="col-8 px-2 d-flex flex-column justify-content-between">
-                      <span className={`small ${isDark ? 'text-bg-dark ' : 'text-white'}`}>{book.title}</span>
+                      <span className={`small ${isDark ? 'text-bg-dark ' : 'text-black'}`}>{book.title}</span>
                       <div className={`buttons text-end border-top ${isDark ? 'border-secondary' : ''}`}>
                         <IconButton iconName={"trash-outline"} onClick={() => dispatch(deleteLatestRelease(book.asin))}/>
                       </div>

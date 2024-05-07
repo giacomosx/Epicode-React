@@ -2,8 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 import HeroCard from "../herocard/HeroCard";
-import "swiper/css";
-import "swiper/css/pagination";
+
 import "./swipercomp.css";
 
 const SwiperComp = ({ data }) => {
@@ -15,6 +14,28 @@ const SwiperComp = ({ data }) => {
 
     // Object with parameters
     const params = {
+      injectStyles: [
+        `.swiper-button-prev,
+    .swiper-button-next {
+        color: #7949FF ;
+    }`,
+      `
+      .swiper-slide {
+        height: 100%;
+        padding: 0.5rem
+      }
+      `
+    ,
+        `
+    @media only screen and (max-width: 767px) {
+    
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+        }
+    }
+      `,
+      ],
       breakpoints: {
         768: {
           slidesPerView: 2,
@@ -22,7 +43,7 @@ const SwiperComp = ({ data }) => {
         },
         1024: {
           slidesPerView: 2,
-          spaceBetween: 5,
+          spaceBetween: 20,
         },
         1440: {
           slidesPerView: 3,
@@ -38,7 +59,11 @@ const SwiperComp = ({ data }) => {
   }, []);
 
   return (
-    <swiper-container init="false" ref={swiperRef}>
+    <swiper-container
+      init="false"
+      ref={swiperRef}
+      navigation="true"
+    >
       {data.map((book, indx) => (
         <swiper-slide className="p-2 h-100 " key={"swiper-" + indx}>
           <HeroCard title={book.title} img={book.img} price={book.price} />
