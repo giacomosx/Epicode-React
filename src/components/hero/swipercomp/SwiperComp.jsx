@@ -10,7 +10,7 @@ const SwiperComp = ({ data }) => {
   return (
     <div className="container">
       <Swiper
-        
+        direction="horizontal"
         autoplay={{
           delay: 2500,
           disableOnInteraction: true,
